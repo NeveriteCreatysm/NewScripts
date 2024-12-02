@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.5", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.65", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -135,7 +135,7 @@ while BlockPred2 do
             part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
             distance = (humrp.Position - part.Position).Magnitude
 
-            if distance < 50 then
+            if distance < 25 then
                 local direction = char.HumanoidRootPart.CFrame.LookVector * -5
                 local position = char.HumanoidRootPart.CFrame.Position + direction
 
@@ -315,7 +315,7 @@ wait()
     wait(0.1)
     for i,v in pairs(workspace:GetChildren()) do
             if v.Name == "RakoofNPC" and not v.HumanoidRootPart:FindFirstChild("Rakoof_PESP") and v:FindFirstChild("HumanoidRootPart") then
-                
+            wait(0.1)
             local a = Instance.new("BoxHandleAdornment")
             a.Name = "Rakoof_PESP"
             a.Parent = v.HumanoidRootPart
