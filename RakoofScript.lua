@@ -91,20 +91,20 @@ part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
 
-if ws < 30 and distance < 7.5 then
+if ws < 30 and distance < 9.5 then
 for i,v in pairs(char:GetChildren()) do
     if v:IsA("Tool") then
         v:Activate()
     end
 end
-elseif ws >= 30 and distance < 8.5 then
+elseif ws >= 30 and distance < 11 then
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
             v:Activate()
         end
     end
 
-    elseif ws >= 40 and distance < 10 then
+    elseif ws >= 40 and distance < 16.5 then
         for i,v in pairs(char:GetChildren()) do
             if v:IsA("Tool") then
                 v:Activate()
