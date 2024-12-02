@@ -11,7 +11,26 @@ local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))
                 local Window = OrionLib:MakeWindow({Name = "Rakoof TEST", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
-                    Name = "Home",
+                    Name = "Combat",
+                    Icon = "http://www.roblox.com/asset/?id=4370345144",
+                    PremiumOnly = false
+                })
+
+                local Tab2 = Window:MakeTab({
+                    Name = "Movement",
+                    Icon = "http://www.roblox.com/asset/?id=4370345144",
+                    PremiumOnly = false
+                })
+
+
+                local Tab3 = Window:MakeTab({
+                    Name = "Render",
+                    Icon = "http://www.roblox.com/asset/?id=4370345144",
+                    PremiumOnly = false
+                })
+
+                local Tab4 = Window:MakeTab({
+                    Name = "Other",
                     Icon = "http://www.roblox.com/asset/?id=4370345144",
                     PremiumOnly = false
                 })
@@ -20,44 +39,6 @@ local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))
 
 
 
-
-Tab:AddToggle({
-                    Name = "Auto BHOP",
-                    Default = false,
-                    Callback = function(Value)
-SuiSpam = Value
-while SuiSpam do
-if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Freefall and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):GetState() == Enum.HumanoidStateType.Landed then
-   	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
-
-game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Jump = true
-end
-task.wait()
-end
-end
-})
-
-
-Tab:AddToggle({
-                    Name = "AutoFarm (Be near light green trash)",
-                    Default = false,
-                    Callback = function(Value)
-TrashSpam = Value
-while TrashSpam do
-if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-  
-
-for i,v in pairs(workspace.Filter.Lootable:GetChildren()) do
-if v.Name == "RecycleBin" and v:FindFirstChild("ProximityPrompt") then
-fireproximityprompt(v.ProximityPrompt)
-end
-end
-
-end
-task.wait()
-end
-end
-})
 
 
 Tab:AddToggle({
@@ -90,7 +71,26 @@ end
 
 
 
-Tab:AddToggle({
+Tab2:AddToggle({
+    Name = "Auto BHOP",
+    Default = false,
+    Callback = function(Value)
+SuiSpam = Value
+while SuiSpam do
+if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):GetState() ~= Enum.HumanoidStateType.Freefall and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):GetState() == Enum.HumanoidStateType.Landed then
+game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
+
+game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").Jump = true
+end
+task.wait()
+end
+end
+})
+
+
+
+
+Tab2:AddToggle({
                     Name = "Infinite Stamina",
                     Default = false,
                     Callback = function(Value)
@@ -108,20 +108,11 @@ end
 })
 
 
-Tab:AddButton({
-	Name = "Buy trap (OLNY INTERMISSION)",
-	Callback = function()
-      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
-                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.BeartrapButton, false)
-            end
-  	end    
-})
 
 
 
 
-
-Tab:AddToggle({
+Tab3:AddToggle({
     Name = "Rakoof ESP (DONT SPAM)",
     Default = false,
     Callback = function(Value)
@@ -200,4 +191,63 @@ end
 
 ----------
 end
+})
+
+
+
+Tab3:AddToggle({
+    Name = "Fullbright",
+    Default = false,
+    Callback = function(Value)
+FullBright = Value
+while FullBright do
+    local Lighting = game:GetService("Lighting")
+    Lighting.Brightness = 2
+	Lighting.ClockTime = 14
+	Lighting.FogEnd = 100000
+	Lighting.GlobalShadows = false
+	Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+
+    Lighting.FogEnd = 100000
+	for i,v in pairs(Lighting:GetDescendants()) do
+		if v:IsA("Atmosphere") then
+			v:Destroy()
+		end
+	end
+
+task.wait()
+end
+end
+})
+
+
+Tab4:AddToggle({
+    Name = "AutoFarm (Be near light green trash)",
+    Default = false,
+    Callback = function(Value)
+TrashSpam = Value
+while TrashSpam do
+if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+
+
+for i,v in pairs(workspace.Filter.Lootable:GetChildren()) do
+if v.Name == "RecycleBin" and v:FindFirstChild("ProximityPrompt") then
+fireproximityprompt(v.ProximityPrompt)
+end
+end
+
+end
+task.wait()
+end
+end
+})
+
+
+Tab4:AddButton({
+	Name = "Buy trap (OLNY INTERMISSION)",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.BeartrapButton, false)
+            end
+  	end    
 })
