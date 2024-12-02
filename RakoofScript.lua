@@ -37,7 +37,7 @@ local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))
 
 
                 local Tab5 = Window:MakeTab({
-                    Name = "Buy (ONLY INTERMISSION)",
+                    Name = "Buy",
                     Icon = "http://www.roblox.com/asset/?id=9087232897",
                     PremiumOnly = false
                 })
@@ -363,7 +363,7 @@ end
 
 
 local Section = Tab5:AddSection({
-	Name = "Other"
+	Name = "Other (ONLY INTERMISSION)"
 })
 
 Tab5:AddButton({
@@ -466,7 +466,7 @@ Tab5:AddButton({
 })
 
 local Section = Tab5:AddSection({
-	Name = "Combat"
+	Name = "Combat (ONLY INTERMISSION)"
 })
 
 Tab5:AddButton({
