@@ -8,7 +8,7 @@ end
 
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v0.1", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v0.2", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -97,24 +97,21 @@ if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild(
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
-
-if char.Humanoid.WalkSpeed < 30 and distance < 13.15 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
-wait(0.15)
+wait(0.1)
+if char.Humanoid.WalkSpeed < 30 and distance < 10.5 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
     for i,v in pairs(char:GetChildren()) do
     if v:IsA("Tool") then
         v:Activate()
     end
 end
-elseif char.Humanoid.WalkSpeed >= 30 and distance < 14.75 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
-    wait(0.15)
+elseif char.Humanoid.WalkSpeed >= 30 and distance < 12.5 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
             v:Activate()
         end
     end
 
-    elseif char.Humanoid.WalkSpeed >= 40 and distance < 16.75 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
-        wait(0.15)
+    elseif char.Humanoid.WalkSpeed >= 40 and distance < 14.75 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
         for i,v in pairs(char:GetChildren()) do
             if v:IsA("Tool") then
                 v:Activate()
@@ -152,17 +149,16 @@ while DalSpam do
 if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
-
+wait(0.1)
 
 if char.Humanoid.WalkSpeed < 30 and distance < 16.5 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
-    wait(0.15)
+
 for i,v in pairs(char:GetChildren()) do
     if v:IsA("Tool") then
         v:Activate()
     end
 end
 elseif char.Humanoid.WalkSpeed >= 30 and distance < 18 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
-    wait(0.15)
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
             v:Activate()
@@ -170,7 +166,6 @@ elseif char.Humanoid.WalkSpeed >= 30 and distance < 18 and workspace.RakoofNPC.C
     end
 
     elseif char.Humanoid.WalkSpeed >= 40 and distance < 23 and workspace.RakoofNPC.Configuration.Blocking.Value ~= true then
-        wait(0.15)
         for i,v in pairs(char:GetChildren()) do
             if v:IsA("Tool") then
                 v:Activate()
