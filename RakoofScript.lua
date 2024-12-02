@@ -8,7 +8,7 @@ end
 
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.1", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.2", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -77,7 +77,7 @@ end
 })
 
 Tab:AddToggle({
-    Name = "Предохранять от блока (Не работает на авто-хите)",
+    Name = "Предохранять от блока",
     Default = false,
     Callback = function(Value)
 BlockPred = Value
@@ -124,6 +124,39 @@ task.wait()
 end
 end
 })
+
+Tab:AddToggle({
+    Name = "Предохранять от блока (v2)",
+    Default = false,
+    Callback = function(Value)
+BlockPred2 = Value
+while BlockPred2 do
+    if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
+        local player = game.Players.LocalPlayer
+        local char = player.Character or player.CharacterAdded:Wait()
+        local humrp = char.HumanoidRootPart
+
+        local part = workspace.RakoofNPC.HumanoidRootPart or nil
+        local distance
+
+        if workspace:FindFirstChild("RakoofNPC").Configuration.Blocking.Value == true then
+            part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
+            distance = (humrp.Position - part.Position).Magnitude
+
+            if distance < 50 then
+                local direction = char.HumanoidRootPart.CFrame.LookVector * -5
+                local position = char.HumanoidRootPart.CFrame.Position + direction
+
+                char.HumanoidRootPart.HumanoidRootPart.CFrame = CFrame.new(position)
+            end
+
+        end
+
+    end
+end
+end
+})
+
 
 Tab:AddToggle({
     Name = "Auto Hit (Для ближнего боя)",
