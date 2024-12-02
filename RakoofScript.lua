@@ -98,20 +98,20 @@ part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
 
-if char.Humanoid.WalkSpeed < 30 and distance < 10 and workspace.RakoofNPC.Configuration.ForceBlocking.Value > 0 then
+if char.Humanoid.WalkSpeed < 30 and distance < 10 and workspace.RakoofNPC.Configuration.Blocking.Value == false then
     for i,v in pairs(char:GetChildren()) do
     if v:IsA("Tool") then
         v:Activate()
     end
 end
-elseif char.Humanoid.WalkSpeed >= 30 and distance < 12.5 and workspace.RakoofNPC.Configuration.ForceBlocking.Value > 0 then
+elseif char.Humanoid.WalkSpeed >= 30 and distance < 12.5 and workspace.RakoofNPC.Configuration.Blocking.Value == false then
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
             v:Activate()
         end
     end
 
-    elseif char.Humanoid.WalkSpeed >= 40 and distance < 14.5 and workspace.RakoofNPC.Configuration.ForceBlocking.Value > 0 then
+    elseif char.Humanoid.WalkSpeed >= 40 and distance < 14.5 and workspace.RakoofNPC.Configuration.Blocking.Value == false then
         for i,v in pairs(char:GetChildren()) do
             if v:IsA("Tool") then
                 v:Activate()
@@ -150,15 +150,22 @@ if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild(
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
+if workspace.RakoofNPC.Configuration.Blocking.Value == false and distance < 20 then
+    for i,v in pairs(char:GetChildren()) do
+        if v:IsA("Tool") then
+            v.Parent = player.Backpack
+        end
+    end
+end
 
-if char.Humanoid.WalkSpeed < 30 and distance < 16.5 and workspace.RakoofNPC.Configuration.ForceBlocking.Value > 0 then
+if char.Humanoid.WalkSpeed < 30 and distance < 16.5 and workspace.RakoofNPC.Configuration.Blocking.Value == false then
 
 for i,v in pairs(char:GetChildren()) do
     if v:IsA("Tool") then
         v:Activate()
     end
 end
-elseif char.Humanoid.WalkSpeed >= 30 and distance < 18 and workspace.RakoofNPC.Configuration.ForceBlocking.Value > 0 then
+elseif char.Humanoid.WalkSpeed >= 30 and distance < 18 and workspace.RakoofNPC.Configuration.Blocking.Value == false then
 
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
@@ -166,7 +173,7 @@ elseif char.Humanoid.WalkSpeed >= 30 and distance < 18 and workspace.RakoofNPC.C
         end
     end
 
-    elseif char.Humanoid.WalkSpeed >= 40 and distance < 23 and workspace.RakoofNPC.Configuration.ForceBlocking.Value > 0 then
+    elseif char.Humanoid.WalkSpeed >= 40 and distance < 23 and workspace.RakoofNPC.Configuration.Blocking.Value == false then
  
         for i,v in pairs(char:GetChildren()) do
             if v:IsA("Tool") then
