@@ -1,9 +1,14 @@
 
+local function getLocalRoot()
+    local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+    local hrp = char:WaitForChild("HumanoidRootPart")
+    return hrp
+end
 
 
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v0.5", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v0.7", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -44,7 +49,7 @@ local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))
 
 
 Tab:AddToggle({
-                    Name = "Silent Aim (On RakoofNPC)",
+                    Name = "Silent Aim (Авто-наводка)",
                     Default = false,
                     Callback = function(Value)
 SilentSpam = Value
@@ -84,6 +89,8 @@ local char = player.Character or player.CharacterAdded:Wait()
 local humrp = char.HumanoidRootPart
 local ws = char.Humanoid.WalkSpeed
 
+
+
 local part = workspace.RakoofNPC.HumanoidRootPart or nil
 local distance
 while DalSpam do
@@ -92,11 +99,18 @@ part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
 if workspace.RakoofNPC.Configuration.Blocking.Value == true and distance < 30 then
+
+    local direction = char.HumanoidRootPart.CFrame.LookVector * -25
+    local position = char.HumanoidRootPart.CFrame.Position + direction
+    char.HumanoidRootPart.CFrame = CFrame.new(position)
+
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
             v.Parent = player.Backpack
         end
     end
+
+
 end
 
 end
@@ -218,7 +232,7 @@ end
 
 
 Tab2:AddToggle({
-    Name = "Auto BHOP",
+    Name = "Авто прыжок",
     Default = false,
     Callback = function(Value)
 SuiSpam = Value
@@ -237,7 +251,7 @@ end
 
 
 Tab2:AddToggle({
-                    Name = "Infinite Stamina",
+                    Name = "Бесконечная энергия",
                     Default = false,
                     Callback = function(Value)
 StaminaSpam = Value
@@ -259,7 +273,7 @@ end
 
 
 Tab3:AddToggle({
-    Name = "Rakoof ESP (DONT SPAM)",
+    Name = "Rakoof подсветка (HE СПАМЬ)",
     Default = false,
     Callback = function(Value)
 RakoofEsp = Value
@@ -368,7 +382,7 @@ end
 
 
 Tab4:AddToggle({
-    Name = "AutoFarm (Be near light green trash)",
+    Name = "Автофарм (рядом с зёленой мелкой мусоркой)",
     Default = false,
     Callback = function(Value)
 TrashSpam = Value
