@@ -5,10 +5,35 @@ local function getLocalRoot()
     return hrp
 end
 
+local avoidblock = false
+local avoidblockmag = 100
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    if avoidblock == true and avoidblockmag < 45 then
+        local player = game.Players.LocalPlayer
+        local char = player.Character or player.CharacterAdded:Wait()
+        local humrp = char.HumanoidRootPart
+
+        for i,v in pairs(char:GetChildren()) do
+            if v:IsA("Tool") then
+                local grippos = v.GripPos
+                v.GripPos = Vector3.new(0,10000,0)
+                v.Parent = player.Backpack
+                task.wait()
+                v.GripPos = grippos
+            end
+        end
+    
+        local direction = char.HumanoidRootPart.CFrame.LookVector * -15
+        local position = char.HumanoidRootPart.CFrame.Position + direction
+        char.HumanoidRootPart.CFrame = CFrame.new(position)
+
+    end
+end)
 
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v0.9", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.0", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -81,6 +106,7 @@ Tab:AddToggle({
     Default = false,
     Callback = function(Value)
 BlockPred = Value
+avoidblock = Value
 while BlockPred do
 if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 
@@ -97,6 +123,7 @@ while BlockPred do
 if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
+avoidblockmag = distance
 
 if workspace.RakoofNPC.Configuration.Blocking.Value == true and distance < 45 then
 
@@ -111,7 +138,7 @@ if workspace.RakoofNPC.Configuration.Blocking.Value == true and distance < 45 th
         end
     end
 
-    local direction = char.HumanoidRootPart.CFrame.LookVector * -25
+    local direction = char.HumanoidRootPart.CFrame.LookVector * -15
     local position = char.HumanoidRootPart.CFrame.Position + direction
     char.HumanoidRootPart.CFrame = CFrame.new(position)
 
