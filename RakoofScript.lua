@@ -362,7 +362,9 @@ end
 
 
 
-
+local Section = Tab5:AddSection({
+	Name = "Other"
+})
 
 Tab5:AddButton({
 	Name = "Buy Bear Trap",
@@ -463,7 +465,7 @@ Tab5:AddButton({
   	end    
 })
 
-local Section = Tab:AddSection({
+local Section = Tab5:AddSection({
 	Name = "Combat"
 })
 
