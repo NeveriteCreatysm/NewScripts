@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.4", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.5", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -139,7 +139,7 @@ while BlockPred2 do
                 local direction = char.HumanoidRootPart.CFrame.LookVector * -5
                 local position = char.HumanoidRootPart.CFrame.Position + direction
 
-                char.HumanoidRootPart.HumanoidRootPart.CFrame = CFrame.new(position)
+                char.HumanoidRootPart.CFrame = CFrame.new(position)
             end
 
         end
