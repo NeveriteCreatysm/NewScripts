@@ -8,7 +8,7 @@ end
 
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v0.7", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v0.9", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -80,8 +80,8 @@ Tab:AddToggle({
     Name = "Предохранять от блока",
     Default = false,
     Callback = function(Value)
-DalSpam = Value
-while DalSpam do
+BlockPred = Value
+while BlockPred do
 if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 
 local player = game.Players.LocalPlayer
@@ -93,22 +93,29 @@ local ws = char.Humanoid.WalkSpeed
 
 local part = workspace.RakoofNPC.HumanoidRootPart or nil
 local distance
-while DalSpam do
+while BlockPred do
 if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
-if workspace.RakoofNPC.Configuration.Blocking.Value == true and distance < 30 then
+if workspace.RakoofNPC.Configuration.Blocking.Value == true and distance < 45 then
+
+
+ for i,v in pairs(char:GetChildren()) do
+        if v:IsA("Tool") then
+            local grippos = v.GripPos
+            v.GripPos = Vector3.new(0,10000,0)
+            v.Parent = player.Backpack
+            task.wait()
+            v.GripPos = grippos
+        end
+    end
 
     local direction = char.HumanoidRootPart.CFrame.LookVector * -25
     local position = char.HumanoidRootPart.CFrame.Position + direction
     char.HumanoidRootPart.CFrame = CFrame.new(position)
 
-    for i,v in pairs(char:GetChildren()) do
-        if v:IsA("Tool") then
-            v.Parent = player.Backpack
-        end
-    end
+   
 
 
 end
