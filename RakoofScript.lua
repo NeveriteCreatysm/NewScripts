@@ -97,14 +97,14 @@ for i,v in pairs(char:GetChildren()) do
         v:Activate()
     end
 end
-elseif char.Humanoid.WalkSpeed >= 30 and distance < 14.5 then
+elseif char.Humanoid.WalkSpeed >= 30 and distance < 13.25 then
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
             v:Activate()
         end
     end
 
-    elseif char.Humanoid.WalkSpeed >= 40 and distance < 17 then
+    elseif char.Humanoid.WalkSpeed >= 40 and distance < 15.5 then
         for i,v in pairs(char:GetChildren()) do
             if v:IsA("Tool") then
                 v:Activate()
