@@ -1,4 +1,4 @@
-
+-- LOL
 local function getLocalRoot()
     local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
     local hrp = char:WaitForChild("HumanoidRootPart")
