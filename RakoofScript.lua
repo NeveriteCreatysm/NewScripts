@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.65", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "Rakoof v1.7", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -136,7 +136,7 @@ while BlockPred2 do
             distance = (humrp.Position - part.Position).Magnitude
 
             if distance < 25 then
-                local direction = char.HumanoidRootPart.CFrame.LookVector * -5
+                local direction = char.HumanoidRootPart.CFrame.LookVector * -15
                 local position = char.HumanoidRootPart.CFrame.Position + direction
 
                 char.HumanoidRootPart.CFrame = CFrame.new(position)
