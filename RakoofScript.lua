@@ -7,9 +7,10 @@ end
 
 local avoidblock = false
 local avoidblockmag = 100
+local haverakoof = false
 
 game:GetService("RunService").Heartbeat:Connect(function()
-    if avoidblock == true and avoidblockmag < 45 then
+    if avoidblock == true and avoidblockmag < 45 and haverakoof == true and workspace:FindFirstChild("RakoofNPC").Configuration.Blocking.Value == true then
         local player = game.Players.LocalPlayer
         local char = player.Character or player.CharacterAdded:Wait()
         local humrp = char.HumanoidRootPart
@@ -114,7 +115,7 @@ local player = game.Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
 local humrp = char.HumanoidRootPart
 local ws = char.Humanoid.WalkSpeed
-
+haverakoof = true
 
 
 local part = workspace.RakoofNPC.HumanoidRootPart or nil
