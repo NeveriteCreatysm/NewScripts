@@ -81,6 +81,7 @@ if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:Fin
 local player = game.Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
 local humrp = char.HumanoidRootPart
+local ws = char.Humanoid.WalkSpeed
 
 local part = workspace.RakoofNPC.HumanoidRootPart or nil
 local distance
@@ -89,12 +90,79 @@ if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild(
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
-if distance < 13 then
+
+if ws < 30 and distance < 7.5 then
 for i,v in pairs(char:GetChildren()) do
     if v:IsA("Tool") then
         v:Activate()
     end
 end
+elseif ws >= 30 and distance < 8.5 then
+    for i,v in pairs(char:GetChildren()) do
+        if v:IsA("Tool") then
+            v:Activate()
+        end
+    end
+
+    elseif ws >= 40 and distance < 10 then
+        for i,v in pairs(char:GetChildren()) do
+            if v:IsA("Tool") then
+                v:Activate()
+            end
+        end
+end
+
+end
+task.wait()
+end
+
+end
+task.wait()
+end
+end
+})
+
+
+Tab:AddToggle({
+    Name = "Auto Shot (Для дальнего боя)",
+    Default = false,
+    Callback = function(Value)
+DalSpam = Value
+while DalSpam do
+if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
+
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humrp = char.HumanoidRootPart
+local ws = char.Humanoid.WalkSpeed
+
+local part = workspace.RakoofNPC.HumanoidRootPart or nil
+local distance
+while DalSpam do
+if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
+part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
+distance = (humrp.Position - part.Position).Magnitude
+
+
+if ws < 30 and distance < 10 then
+for i,v in pairs(char:GetChildren()) do
+    if v:IsA("Tool") then
+        v:Activate()
+    end
+end
+elseif ws >= 30 and distance < 12.5 then
+    for i,v in pairs(char:GetChildren()) do
+        if v:IsA("Tool") then
+            v:Activate()
+        end
+    end
+
+    elseif ws >= 40 and distance < 15 then
+        for i,v in pairs(char:GetChildren()) do
+            if v:IsA("Tool") then
+                v:Activate()
+            end
+        end
 end
 
 end
