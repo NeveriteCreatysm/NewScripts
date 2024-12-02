@@ -8,7 +8,7 @@ end
 
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "RAKOOF v0.4", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "RAKOOF v0.3", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -96,7 +96,7 @@ if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild(
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
 
-if workspace.RakoofNPC.Configuration.Blocking.Value == false and distance < 20 then
+if workspace.RakoofNPC.Configuration.Blocking.Value == true and distance < 30 then
     for i,v in pairs(char:GetChildren()) do
         if v:IsA("Tool") then
             v.Parent = player.Backpack
