@@ -74,8 +74,8 @@ Tab:AddToggle({
     Name = "Auto Hit (Для ближнего боя)",
     Default = false,
     Callback = function(Value)
-SilentSpam = Value
-while SilentSpam do
+BlijSpam = Value
+while BlijSpam do
 if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 
 local player = game.Players.LocalPlayer
@@ -84,7 +84,7 @@ local humrp = char.HumanoidRootPart
 
 local part = workspace.RakoofNPC.HumanoidRootPart or nil
 local distance
-while SilentSpam do
+while BlijSpam do
 if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
