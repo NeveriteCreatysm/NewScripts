@@ -8,7 +8,7 @@ end
 
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))()
                 
-                local Window = OrionLib:MakeWindow({Name = "RAKOOF v0.3", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "RAKOOF v0.4", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
@@ -76,6 +76,43 @@ end
 end
 })
 
+Tab:AddToggle({
+    Name = "Предохранять от блока",
+    Default = false,
+    Callback = function(Value)
+DalSpam = Value
+while DalSpam do
+if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") and workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
+
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humrp = char.HumanoidRootPart
+local ws = char.Humanoid.WalkSpeed
+
+local part = workspace.RakoofNPC.HumanoidRootPart or nil
+local distance
+while DalSpam do
+if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
+part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
+distance = (humrp.Position - part.Position).Magnitude
+
+if workspace.RakoofNPC.Configuration.Blocking.Value == false and distance < 20 then
+    for i,v in pairs(char:GetChildren()) do
+        if v:IsA("Tool") then
+            v.Parent = player.Backpack
+        end
+    end
+end
+
+end
+task.wait()
+end
+
+end
+task.wait()
+end
+end
+})
 
 Tab:AddToggle({
     Name = "Auto Hit (Для ближнего боя)",
@@ -149,14 +186,6 @@ while DalSpam do
 if workspace:FindFirstChild("RakoofNPC") and workspace.RakoofNPC:FindFirstChild("HumanoidRootPart") then
 part = workspace:FindFirstChild("RakoofNPC").HumanoidRootPart or nil
 distance = (humrp.Position - part.Position).Magnitude
-
-if workspace.RakoofNPC.Configuration.Blocking.Value == false and distance < 20 then
-    for i,v in pairs(char:GetChildren()) do
-        if v:IsA("Tool") then
-            v.Parent = player.Backpack
-        end
-    end
-end
 
 if char.Humanoid.WalkSpeed < 30 and distance < 16.5 and workspace.RakoofNPC.Configuration.Blocking.Value == false then
 
