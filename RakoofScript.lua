@@ -12,26 +12,26 @@ local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))
 
                 local Tab = Window:MakeTab({
                     Name = "Combat",
-                    Icon = "http://www.roblox.com/asset/?id=4370345144",
+                    Icon = "http://www.roblox.com/asset/?id=7485051733",
                     PremiumOnly = false
                 })
 
                 local Tab2 = Window:MakeTab({
                     Name = "Movement",
-                    Icon = "http://www.roblox.com/asset/?id=4370345144",
+                    Icon = "http://www.roblox.com/asset/?id=9657060548",
                     PremiumOnly = false
                 })
 
 
                 local Tab3 = Window:MakeTab({
                     Name = "Render",
-                    Icon = "http://www.roblox.com/asset/?id=4370345144",
+                    Icon = "http://www.roblox.com/asset/?id=13321848342",
                     PremiumOnly = false
                 })
 
                 local Tab4 = Window:MakeTab({
                     Name = "Other",
-                    Icon = "http://www.roblox.com/asset/?id=4370345144",
+                    Icon = "http://www.roblox.com/asset/?id=9087232897",
                     PremiumOnly = false
                 })
 
