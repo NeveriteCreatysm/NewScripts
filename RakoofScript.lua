@@ -36,6 +36,13 @@ local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/xCDm723n')))
                 })
 
 
+                local Tab5 = Window:MakeTab({
+                    Name = "Buy (ONLY INTERMISSION)",
+                    Icon = "http://www.roblox.com/asset/?id=9087232897",
+                    PremiumOnly = false
+                })
+
+
 
 
 
@@ -354,11 +361,182 @@ end
 })
 
 
-Tab4:AddButton({
-	Name = "Buy trap (OLNY INTERMISSION)",
+
+
+
+Tab5:AddButton({
+	Name = "Buy Bear Trap",
 	Callback = function()
       		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
                 game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.BeartrapButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Banana Peel",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.BananaPeelButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Cameras",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.CamerasButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Glowstick",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.GlowstickButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Map",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.MapButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Medkit",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.MedkitButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Night Vision",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.NightVisionButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Vitamins",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.VitaminsButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Watch",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.WatchButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Tracker",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.TrackerButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Toolbox",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.ToolboxButton, false)
+            end
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Combat"
+})
+
+Tab5:AddButton({
+	Name = "Buy Big Spoon",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.BigSpoonButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Cheese Hammer",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.CheeseHammerButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Revolver",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.M66RevolverButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Taser",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.TaserButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Survivor Taser",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.SurvivorTaserButton, false)
+            end
+  	end    
+})
+
+
+Tab5:AddButton({
+	Name = "Buy Stun Stick",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.StunStickButton, false)
+            end
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Buy Survivor Stun Stick",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.SurvivorStunStickButton, false)
+            end
+  	end    
+})
+
+
+Tab5:AddButton({
+	Name = "Buy Vest",
+	Callback = function()
+      		if game:GetService("ReplicatedStorage").Values.Intermission.Value == true then
+                game:GetService("ReplicatedStorage").RemoteFunctions.ShopFunction:InvokeServer(game:GetService("Players").LocalPlayer.PlayerGui.ShopGui.ShopFrame.Categories.Tools.VestButton, false)
             end
   	end    
 })
